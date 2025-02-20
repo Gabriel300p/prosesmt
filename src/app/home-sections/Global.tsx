@@ -25,7 +25,7 @@ export default function Global() {
     setLoading(true);
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/v1/countries`
+        `${process.env.NEXT_PUBLIC_API_URL}/countries`
       );
       const jsonData = await response.json();
 

@@ -18,6 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import StateData from "@/types/State";
+import "dotenv/config";
 import { useCallback, useEffect, useState } from "react";
 import { NewItem } from "./form/NewItem";
 
@@ -38,11 +39,11 @@ export default function Brasil() {
       // Se uma data foi selecionada, converte "YYYY-MM-DD" para "YYYYMMDD" e usa a rota específica. Se nenhuma data for selecionada vai buscar com a rota padrão.
       const url =
         selectedDate.trim() !== ""
-          ? `${process.env.NEXT_PUBLIC_API_URL}v1/brazil/${selectedDate.replace(
+          ? `${process.env.NEXT_PUBLIC_API_URL}/brazil/${selectedDate.replace(
               /-/g,
               ""
             )}`
-          : `${process.env.NEXT_PUBLIC_API_URL}/v1`;
+          : `${process.env.NEXT_PUBLIC_API_URL}/`;
 
       const response = await fetch(url);
       const jsonData = await response.json();
