@@ -60,7 +60,8 @@ export default function Global() {
     <div className="flex flex-col gap-5">
       <div className="flex items-center ">
         <h1 className="text-black text-lg font-semibold leading-tight">
-          Lista de países por casos (maior → menor)
+          Lista de países por casos <br className="block md:hidden" /> (maior →
+          menor)
         </h1>
       </div>
 

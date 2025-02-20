@@ -76,7 +76,7 @@ export default function Brasil() {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex items-center justify-between">
-        <h1 className="text-black text-lg font-semibold leading-tight">
+        <h1 className="text-black text-base md:text-lg font-semibold leading-tight">
           Lista de estados por casos (maior → menor)
         </h1>
         <Dialog>

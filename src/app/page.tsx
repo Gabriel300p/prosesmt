@@ -5,7 +5,7 @@ import Global from "./home-sections/Global";
 
 export default function Home() {
   return (
-    <div className="w-full max-w-5xl px-4">
+    <div className="w-full max-w-5xl px-3">
       <Card className="p-4 md:p-8">
         {/* Tabs para trocar os dados entre Brasil e Global */}
         <Tabs defaultValue="account">
