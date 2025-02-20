@@ -23,7 +23,7 @@ const CardList: FC<StateData> = ({
             : "Data indisponível"}
         </span>
       </div>
-      <div className="flex gap-5 md:gap-8 justify-around">
+      <div className="flex gap-4 md:gap-8 justify-around">
         {cases !== null && (
           <>
             <div className="flex flex-col items-center">

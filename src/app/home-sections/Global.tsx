@@ -59,7 +59,7 @@ export default function Global() {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex items-center ">
-        <h1 className="text-black text-lg font-semibold leading-tight">
+        <h1 className="text-black text-base md:text-lg font-semibold leading-tight">
           Lista de países por casos <br className="block md:hidden" /> (maior →
           menor)
         </h1>
