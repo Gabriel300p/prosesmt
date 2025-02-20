@@ -38,11 +38,11 @@ export default function Brasil() {
       // Se uma data foi selecionada, converte "YYYY-MM-DD" para "YYYYMMDD" e usa a rota específica. Se nenhuma data for selecionada vai buscar com a rota padrão.
       const url =
         selectedDate.trim() !== ""
-          ? `https://covid19-brazil-api.now.sh/api/report/v1/brazil/${selectedDate.replace(
+          ? `${process.env.NEXT_PUBLIC_API_URL}v1/brazil/${selectedDate.replace(
               /-/g,
               ""
             )}`
-          : "https://covid19-brazil-api.now.sh/api/report/v1";
+          : `${process.env.NEXT_PUBLIC_API_URL}/v1`;
 
       const response = await fetch(url);
       const jsonData = await response.json();

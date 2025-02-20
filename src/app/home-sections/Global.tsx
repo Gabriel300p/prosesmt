@@ -18,14 +18,14 @@ export default function Global() {
   const [countries, setCountries] = useState<StateData[]>([]);
   // State para armazenar o status de carregamento da API
   const [loading, setLoading] = useState<boolean>(true);
-  const [countriesFilter, setCountriesFilter] = useState<string>("todos");
+  const [selectedCountry, setSelectedCountry] = useState<string>("todos");
 
   // Função para buscar os dados e memorizá-los com useCallback
   const fetchData = useCallback(async () => {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://covid19-brazil-api.now.sh/api/report/v1/countries"
+        `${process.env.NEXT_PUBLIC_API_URL}/v1/countries`
       );
       const jsonData = await response.json();
 
@@ -52,9 +52,9 @@ export default function Global() {
 
   // Função para filtrar os países
   const filteredCountries =
-    countriesFilter === "todos"
+    selectedCountry === "todos"
       ? countries
-      : countries.filter((country) => country.country === countriesFilter);
+      : countries.filter((country) => country.country === selectedCountry);
 
   return (
     <div className="flex flex-col gap-5">
@@ -68,7 +68,7 @@ export default function Global() {
         <label htmlFor="state" className="text-xs font-medium text-gray-800">
           Filtrar por país
         </label>
-        <Select onValueChange={(value) => setCountriesFilter(value)}>
+        <Select onValueChange={(value) => setSelectedCountry(value)}>
           <SelectTrigger>
             <SelectValue placeholder="Filtrar por país" />
           </SelectTrigger>
